@@ -6,7 +6,7 @@ http://www.templatemo.com/preview/templatemo_446_boxer
 body
     {
         background: #fff;
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Segoe UI', Calibri;
         font-weight: 300;
         position: relative;
         width: 100%;
@@ -175,7 +175,7 @@ img
 /* start home */       
 #home
     {
-    background: url('../images/home-bg.jpg') no-repeat;
+    background: url('../images/slide-3.jpg') no-repeat;
     background-size: cover;
     color: #fff;
     margin-top: 70px;

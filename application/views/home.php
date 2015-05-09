@@ -6,7 +6,8 @@
     	http://www.templatemo.com/preview/templatemo_446_boxer
     	-->
 		<meta charset="utf-8">
-		<title>Boxer - Software Landing Page</title>
+		<title>Loker</title>
+		<link rel="icon" href="<?php echo base_url("assets/brief.png")?>"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="keywords" content="">
@@ -15,12 +16,8 @@
 		<!-- animate css -->
 		<link rel="stylesheet" href="<?php echo base_url("assets/css/animate.min.css")?>">
 		<!-- bootstrap css -->
-		<link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.min.css")?>">
-		<!-- font-awesome -->
-		<link rel="stylesheet" href="<?php echo base_url("assets/css/font-awesome.min.css")?>">
-		<!-- google font -->
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700,800' rel='stylesheet' type='text/css'>
-
+		<link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.css")?>">
+		
 		<!-- custom css -->
 		<link rel="stylesheet" href="<?php echo base_url("assets/css/templatemo-style.css")?>">
 
@@ -40,15 +37,14 @@
 						<span class="icon icon-bar"></span>
 						<span class="icon icon-bar"></span>
 					</button>
-					<a href="#" class="navbar-brand">Boxer</a>
+					<a class="navbar-brand" href="#"><img width="45" height="45" src="assets/brief.png"/>Loker</a>
 				</div>
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav navbar-right text-uppercase">
 						<li><a href="#home">Home</a></li>
-						<li><a href="#feature">Features</a></li>
-						<li><a href="#pricing">Pricing</a></li>
-						<li><a href="#download">Download</a></li>
-						<li><a href="#contact">Contact</a></li>
+						<li><a href="#feature">Fitur</a></li>
+						<li><a href="#feature1">Perusahaan</a></li>
+						<li><a href="#contact">Contact Us</a></li>
 					</ul>
 				</div>
 			</div>
@@ -61,9 +57,10 @@
 					<div class="row">
 						<div class="col-md-1"></div>
 						<div class="col-md-10 wow fadeIn" data-wow-delay="0.3s">
-							<h1 class="text-upper">Software Landing Page</h1>
-							<p class="tm-white">This is a fully Responsive, Clean Design, Modern, and Flexible Software Landing Page for startups, businesses and agencies. It is built with HTML5 &amp; CSS3, Bootstrap 3.3.4, Font Awesome 4.3.0, and much more. Designed by <a href="http://www.templatemo.com">templatemo</a>. Images by <a href="http://pixabay.com">Pixabay</a></p>
-							<img src="images/software-img.png" class="img-responsive" alt="home img">
+							<h1 class="text-upper">Loker, Gudangnya Lowongan</h1>
+							<p class="tm-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. 
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</a></p>
+							<p><a class="btn btn-lg btn-default" href="#" role="button">Cari pekerjaanmu!</a></p>
 						</div>
 						<div class="col-md-1"></div>
 					</div>
@@ -77,17 +74,17 @@
 				<div class="row">
 					<div class="col-md-4 wow fadeInUp templatemo-box" data-wow-delay="0.3s">
 						<i class="fa fa-laptop"></i>
-						<h3 class="text-uppercase">RESPONSIVE LAYOUT</h3>
+						<h3 class="text-uppercase">Simpel</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. </p>
 					</div>
 					<div class="col-md-4 wow fadeInUp templatemo-box" data-wow-delay="0.3s">
 						<i class="fa fa-twitter"></i>
-						<h3 class="text-uppercase">BOOTSTRAP 3.3.4</h3>
+						<h3 class="text-uppercase">Mudah</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. </p>
 					</div>
 					<div class="col-md-4 wow fadeInUp templatemo-box" data-wow-delay="0.3s">
 						<i class="fa fa-font"></i>
-						<h3 class="text-uppercase">GOOGLE FONT</h3>
+						<h3 class="text-uppercase">Membantu</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. </p>
 					</div>
 				</div>
@@ -100,13 +97,10 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 wow fadeInLeft" data-wow-delay="0.6s">
-						<h2 class="text-uppercase">Our Software Features</h2>
+						<h2 class="text-uppercase">Fitur</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 						<p><span><i class="fa fa-mobile"></i></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 						<p><i class="fa fa-code"></i>Quis autem velis reprehenderit et quis voluptate velit esse quam.</p>
-					</div>
-					<div class="col-md-6 wow fadeInRight" data-wow-delay="0.6s">
-						<img src="images/software-img.png" class="img-responsive" alt="feature img">
 					</div>
 				</div>
 			</div>
@@ -114,14 +108,15 @@
 		<!-- end feature -->
 
 		<!-- start feature1 -->
+		
+		<!-- end feature1 -->
+
+		<!-- start pricing -->
 		<section id="feature1">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-						<img src="images/software-img.png" class="img-responsive" alt="feature img">
-					</div>
-					<div class="col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-						<h2 class="text-uppercase">More of Your Software</h2>
+						<h2 class="text-uppercase">Perusahaan yang Bergabung dengan Loker</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 						<p><span><i class="fa fa-mobile"></i></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 						<p><i class="fa fa-code"></i>Quis autem velis reprehenderit et quis voluptate velit esse quam.</p>
@@ -129,83 +124,9 @@
 				</div>
 			</div>
 		</section>
-		<!-- end feature1 -->
-
-		<!-- start pricing -->
-		<section id="pricing">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 wow bounceIn">
-						<h2 class="text-uppercase">Our Pricing</h2>
-					</div>
-					<div class="col-md-4 wow fadeIn" data-wow-delay="0.6s">
-						<div class="pricing text-uppercase">
-							<div class="pricing-title">
-								<h4>Basic Plan</h4>
-								<p>$10</p>
-								<small class="text-lowercase">monthly</small>
-							</div>
-							<ul>
-								<li>2 GB Space</li>
-								<li>200 GB Bandwidth</li>
-								<li>20 More Themes</li>
-								<li>Lifetime Support</li>
-							</ul>
-							<button class="btn btn-primary text-uppercase">Sign up</button>
-						</div>
-					</div>
-					<div class="col-md-4 wow fadeIn" data-wow-delay="0.6s">
-						<div class="pricing active text-uppercase">
-							<div class="pricing-title">
-								<h4>Business Plan</h4>
-								<p>$20</p>
-								<small class="text-lowercase">monthly</small>
-							</div>
-							<ul>
-								<li>5 GB space</li>
-								<li>500 GB Bandwidth</li>
-								<li>50 More Themes</li>
-								<li>Lifetime Support</li>
-							</ul>
-							<button class="btn btn-primary text-uppercase">Sign up</button>
-						</div>
-					</div>
-					<div class="col-md-4 wow fadeIn" data-wow-delay="0.6s">
-						<div class="pricing text-uppercase">
-							<div class="pricing-title">
-								<h4>Pro Plan</h4>
-								<p>$30</p>
-								<small class="text-lowercase">monthly</small>
-							</div>
-							<ul>
-								<li>10 GB space</li>
-								<li>1,000 GB bandwidth</li>
-								<li>100 more themes</li>
-								<li>Lifetime Support</li>
-							</ul>
-							<button class="btn btn-primary text-uppercase">Sign Up</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
 		<!-- end pricing -->
 
 		<!-- start download -->
-		<section id="download">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6 wow fadeInLeft" data-wow-delay="0.6s">
-						<h2 class="text-uppercase">Download Our Software</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. </p>
-						<button class="btn btn-primary text-uppercase"><i class="fa fa-download"></i> Download</button>
-					</div>
-					<div class="col-md-6 wow fadeInRight" data-wow-delay="0.6s">
-						<img src="images/software-img.png" class="img-responsive" alt="feature img">
-					</div>
-				</div>
-			</div>
-		</section>
 		<!-- end download -->
 
 		<!-- start contact -->
@@ -224,6 +145,7 @@
 						</div>
 						<div class="col-md-6 wow fadeInUp" data-wow-delay="0.6s">
 							<div class="contact-form">
+							
 								<form action="#" method="post">
 									<div class="col-md-6">
 										<input type="text" class="form-control" placeholder="Name">
@@ -253,7 +175,7 @@
 		<footer>
 			<div class="container">
 				<div class="row">
-					<p>Copyright © 2084 Your Company Name | Design: templatemo</p>
+					<p>Copyright © 2015 Loker Coorporation | Mira-Ine-Obos</p>
 				</div>
 			</div>
 		</footer>
