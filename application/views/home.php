@@ -13,16 +13,16 @@
 		<meta name="description" content="">
 
 		<!-- animate css -->
-		<link rel="stylesheet" href="css/animate.min.css">
+		<link rel="stylesheet" href="<?php echo base_url("assets/css/animate.min.css")?>">
 		<!-- bootstrap css -->
-		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.min.css")?>">
 		<!-- font-awesome -->
-		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="<?php echo base_url("assets/css/font-awesome.min.css")?>">
 		<!-- google font -->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700,800' rel='stylesheet' type='text/css'>
 
 		<!-- custom css -->
-		<link rel="stylesheet" href="css/templatemo-style.css">
+		<link rel="stylesheet" href="<?php echo base_url("assets/css/templatemo-style.css")?>">
 
 	</head>
 	<body>
@@ -258,10 +258,10 @@
 			</div>
 		</footer>
 		<!-- end footer -->
-		<script src="js/jquery.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/wow.min.js"></script>
-		<script src="js/jquery.singlePageNav.min.js"></script>
-		<script src="js/custom.js"></script>
+		<script src="<?php echo base_url("assets/js/jquery.js")?>"></script>
+		<script src="<?php echo base_url("assets/js/bootstrap.min.js")?>"></script>
+		<script src="<?php echo base_url("assets/js/wow.min.js")?>"></script>
+		<script src="<?php echo base_url("assets/js/jquery.singlePageNav.min.js")?>"></script>
+		<script src="<?php echo base_url("assets/js/custom.js")?>"></script>
 	</body>
 </html>
