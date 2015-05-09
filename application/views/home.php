@@ -23,12 +23,14 @@
 
 	</head>
 	<body>
-		<!-- start preloader -->
+		<!-- PRELOADER 
+		============================================================= -->
 		<div class="preloader">
 			<div class="sk-spinner sk-spinner-rotating-plane"></div>
     	 </div>
-		<!-- end preloader -->
-		<!-- start navigation -->
+		 
+		<!-- NAVIGATION
+		============================================================= -->
 		<nav class="navbar navbar-default navbar-fixed-top templatemo-nav" role="navigation">
 			<div class="container">
 				<div class="navbar-header">
@@ -54,15 +56,27 @@
 						<li><a href="#">Lowongan</a></li>
 						<li><a href="#">Resume</a></li>
 						<li><a href="#">Rekomendasi</a></li>
-						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Login
+						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Login/Register
 						<span class="caret"></span>
 							</a>
-							<div class="dropdown-menu" style="padding:10px;">
-							<form class="form" action="#" method="post">
-								<input name="username" type="text" class="form-control" placeholder="Username"><br>
-								<input name="password" type="password" class="form-control" placeholder="Password"><br>
-								<input type="submit" class="btn" value="Login">
-							</form>
+							<div class="dropdown-menu" style="padding:17px;">
+							  <form class="form"> 
+								<div class="col-sm-12">
+									<input name="username" id="username" type="text" placeholder="Username"><br><br>
+								</div>
+								<div class="col-sm-12">
+								<input name="password" id="password" type="password" placeholder="Password"><br><br>
+								</div>
+								<div class="col-sm-12">
+								<center><button type="button" id="btnLogin" class="btn">Login</button><br></center>
+								</div>
+								<div class="col-sm-12">
+									<div class="divider"></div>
+								</div>
+								<div class="col-sm-12">
+								<center><button type="button" id="btnLogin" class="btn btn-success">Register</button></center>
+								</div>
+							  </form>
 							</div>
 						</li>
 						<li class="disabled"> <a>|</a> </li>
@@ -71,8 +85,9 @@
 				</div>
 			</div>
 		</nav>
-		<!-- end navigation -->
-		<!-- start home -->
+		
+		<!-- HOME
+		============================================================= -->
 		<section id="home">
 			<div class="overlay">
 				<div class="container">
@@ -89,8 +104,9 @@
 				</div>
 			</div>
 		</section>
-		<!-- end home -->
-		<!-- start divider -->
+		
+		<!-- DIVIDER 
+		============================================================= -->
 		<section id="divider">
 			<div class="container">
 				<div class="row">
@@ -112,9 +128,9 @@
 				</div>
 			</div>
 		</section>
-		<!-- end divider -->
 
-		<!-- start feature -->
+		<!-- FEATURES 
+		============================================================= -->
 		<section id="feature">
 			<div class="container">
 				<div class="row">
@@ -127,13 +143,9 @@
 				</div>
 			</div>
 		</section>
-		<!-- end feature -->
 
-		<!-- start feature1 -->
-		
-		<!-- end feature1 -->
-
-		<!-- start pricing -->
+		<!-- COMPANY 
+		============================================================= -->
 		<section id="feature1">
 			<div class="container">
 				<div class="row">
@@ -146,12 +158,9 @@
 				</div>
 			</div>
 		</section>
-		<!-- end pricing -->
 
-		<!-- start download -->
-		<!-- end download -->
-
-		<!-- start contact -->
+		<!-- CONTACT
+		=============================================================		-->
 		<section id="contact">
 			<div class="overlay">
 				<div class="container">
@@ -191,9 +200,9 @@
 				</div>
 			</div>
 		</section>
-		<!-- end contact -->
-
-		<!-- start footer -->
+		
+		<!-- FOOTER 
+		============================================================= -->
 		<footer>
 			<div class="container">
 				<div class="row">
@@ -201,7 +210,9 @@
 				</div>
 			</div>
 		</footer>
-		<!-- end footer -->
+		
+		<!-- SCRIPT
+		============================================================= -->
 		<script src="<?php echo base_url("assets/js/jquery.js")?>"></script>
 		<script src="<?php echo base_url("assets/js/bootstrap.min.js")?>"></script>
 		<script src="<?php echo base_url("assets/js/wow.min.js")?>"></script>
