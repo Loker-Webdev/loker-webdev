@@ -41,10 +41,32 @@
 				</div>
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav navbar-right text-uppercase">
-						<li><a href="#home">Home</a></li>
-						<li><a href="#feature">Fitur</a></li>
-						<li><a href="#feature1">Perusahaan</a></li>
-						<li><a href="#contact">Contact Us</a></li>
+						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Home
+							<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="#home">Home</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="#feature">Fitur</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="#feature1">Kerja Sama</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="#contact">Contact Us</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Lowongan</a></li>
+						<li><a href="#">Resume</a></li>
+						<li><a href="#">Rekomendasi</a></li>
+						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Login
+						<span class="caret"></span>
+							</a>
+							<div class="dropdown-menu" style="padding:10px;">
+							<form class="form" action="#" method="post">
+								<input name="username" type="text" class="form-control" placeholder="Username"><br>
+								<input name="password" type="password" class="form-control" placeholder="Password"><br>
+								<input type="submit" class="btn" value="Login">
+							</form>
+							</div>
+						</li>
+						<li class="disabled"> <a>|</a> </li>
+						<li><a href="#" role="button">Perusahaan</a></li>
 					</ul>
 				</div>
 			</div>
@@ -116,7 +138,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-						<h2 class="text-uppercase">Perusahaan yang Bergabung dengan Loker</h2>
+						<h2 class="text-uppercase">Perusahaan yang bekerja sama dengan Loker</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 						<p><span><i class="fa fa-mobile"></i></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 						<p><i class="fa fa-code"></i>Quis autem velis reprehenderit et quis voluptate velit esse quam.</p>
