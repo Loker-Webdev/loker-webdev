@@ -44,14 +44,14 @@
 							<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-								<li role="presentation"><a role="menuitem" tabindex="-1" href="#home">Home</a></li>
-								<li role="presentation"><a role="menuitem" tabindex="-1" href="#feature">Fitur</a></li>
-								<li role="presentation"><a role="menuitem" tabindex="-1" href="#feature1">Kerja Sama</a></li>
-								<li role="presentation"><a role="menuitem" tabindex="-1" href="#contact">Contact Us</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="<?php echo site_url('Home/')?>#home">Home</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="<?php echo site_url('Home/')?>#feature">Fitur</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="<?php echo site_url('Home/')?>#feature1">Kerja Sama</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="<?php echo site_url('Home/')?>#contact">Contact Us</a></li>
 							</ul>
 						</li>
-						<li><a href="#">Lowongan</a></li>
-						<li><a href="#">Resume</a></li>
+						<li><a href="<?php echo site_url('Lowongan/')?>">Lowongan</a></li>
+						<li><a href="<?php echo site_url('Profile/')?>">Resume</a></li>
 						<li><a href="#">Rekomendasi</a></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Login/Register
 						<span class="caret"></span>

@@ -53,8 +53,8 @@
 								<li role="presentation"><a role="menuitem" tabindex="-1" href="#contact">Contact Us</a></li>
 							</ul>
 						</li>
-						<li><a href="#">Lowongan</a></li>
-						<li><a href="#">Resume</a></li>
+						<li><a href="<?php echo site_url('Lowongan');?>">Lowongan</a></li>
+						<li><a href="<?php echo site_url('Profile');?>">Resume</a></li>
 						<li><a href="#">Rekomendasi</a></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Login/Register
 						<span class="caret"></span>
@@ -97,7 +97,7 @@
 							<h1 class="text-upper">Loker, Gudangnya Lowongan</h1>
 							<p class="tm-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. 
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</a></p>
-							<p><a class="btn btn-lg btn-default" href="#" role="button">Cari pekerjaanmu!</a></p>
+							<p><a class="btn btn-lg btn-default" href="<?php echo site_url('Lowongan/');?>" role="button">Cari pekerjaanmu!</a></p>
 						</div>
 						<div class="col-md-1"></div>
 					</div>
