@@ -25,6 +25,7 @@ class Home extends CI_Controller {
 		///
 		$this->load->library('doctrine');
         $this->em = $this->doctrine->em;
+		$this->load->helper('url');
 		///
 	}
 

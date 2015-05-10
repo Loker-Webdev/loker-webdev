@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Lowongan extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -23,6 +23,7 @@ class Home extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 		///
+		$this->load->helper('url');
 		$this->load->library('doctrine');
         $this->em = $this->doctrine->em;
 		///
@@ -36,7 +37,7 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('home');
+		//$this->load->view('home');
 		
 		/*TUTORIAL*/
 		/*insert
