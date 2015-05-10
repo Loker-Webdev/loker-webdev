@@ -57,22 +57,22 @@
 						<span class="caret"></span>
 							</a>
 							<div class="dropdown-menu" style="padding:17px;">
-							  <form class="form"> 
-								<div class="col-sm-12">
+							  <form class="form" action=""> 
+								<div class="col-md-12">
 									<input name="username" id="username" type="text" placeholder="Username"><br><br>
 								</div>
-								<div class="col-sm-12">
+								<div class="col-md-12">
 								<input name="password" id="password" type="password" placeholder="Password"><br><br>
 								</div>
-								<div class="col-sm-12">
-								<center><button type="button" id="btnLogin" class="btn">Login</button><br></center>
+								<div class="col-md-12">
+								<center><input type="submit" class="btn" value="Login"></input><br></center>
 								</div>
-								<div class="col-sm-12">
+								<div class="col-md-12">
 									<div class="divider"></div>
 								</div>
-								<div class="col-sm-12">
-								<center><button type="button" id="btnLogin" class="btn btn-success">Register</button></center>
-								</div>
+							  </form>
+							  <form method="link" action="<?php echo site_url('Home/');?>" class="col-md-12">
+									<center><input type="submit" class="btn btn-success" href= role="button" value="Register"></input></center>
 							  </form>
 							</div>
 						</li>

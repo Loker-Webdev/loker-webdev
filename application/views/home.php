@@ -69,15 +69,16 @@
 								<input name="password" id="password" type="password" placeholder="Password"><br><br>
 								</div>
 								<div class="col-sm-12">
-								<center><button type="button" id="btnLogin" class="btn">Login</button><br></center>
+								<center><input type="submit" id="btnLogin" class="btn" value="Login"></button><br></center>
 								</div>
 								<div class="col-sm-12">
 									<div class="divider"></div>
 								</div>
-								<div class="col-sm-12">
-								<center><button type="button" id="btnLogin" class="btn btn-success">Register</button></center>
-								</div>
-							  </form>
+							</form>
+							<form action="<?php echo site_url("Register/");?>" method="link" class="col-sm-12">
+								<center><input type="submit" id="btnRegister" class="btn btn-success" value="Register"></input></center>
+							</form>
+							 
 							</div>
 						</li>
 						<li class="disabled"> <a>|</a> </li>

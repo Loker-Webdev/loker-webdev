@@ -2,28 +2,33 @@
 
 class register extends CI_Controller {
 
-	 private $vUsername='';
-	 private $vNama='';
-	 private $vEmail='';
-	 private $vPassword1='';
-	 private $vPassword2='';
-	 private $status = array("STATUS"=>"");
+	 //private $vUsername='';
+	 //private $vNama='';
+	 //private $vEmail='';
+	 //private $vPassword1='';
+	 //private $vPassword2='';
+	 //private $status = array("STATUS"=>"");
 	 function __construct()
 	 {
 		parent::__construct();
-		$this->load->helper('url');
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 		$this->load->library('doctrine');
         $this->em = $this->doctrine->em;
-		$this->load->library('session');
+		//$this->load->library('session');
 		
 	}
 
+	public function posisi(){
+		$posisiRepository=$this->em->getRepository('Entity\Posisi');
+		$data['posisi']=$posisiRepository->findAll();
+		$this->load->view('register',$data);
+	}
+	
 	public function index()
 	{
-		$this->load->view('login_view');
-		$this->form_validation->set_rules('register_username','Nama','required');
+		$this->posisi();
+		/*$this->form_validation->set_rules('register_username','Nama','required');
 		$this->form_validation->set_rules('password2','Confirm Password','required');
 		$this->form_validation->set_rules('email','Email','required|valid_email');
 		
@@ -41,11 +46,9 @@ class register extends CI_Controller {
 					redirect(site_url('home'));
 				}
 			}
-		}
-		
-		
+		}*/
 	}
-	private function cekEmail(){
+	/*private function cekEmail(){
 		if($this->form_validation->valid_email($this->vEmail)){
 			return true;
 		}else{
@@ -84,6 +87,6 @@ class register extends CI_Controller {
 			json_encode ($this->status) ;	
 			return true;
 		}
-	}
+	}*/
 	
 }
