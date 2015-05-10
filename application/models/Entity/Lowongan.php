@@ -48,6 +48,11 @@ class Lowongan
     protected $tgl_posting;
 	
 	/**
+     * @Column(type="string", length=1024, nullable=true)
+     */
+    protected $judul;
+	
+	/**
      * @Column(type="date", nullable=false)
      */
     protected $tgl_kadaluarsa;
