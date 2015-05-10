@@ -3,20 +3,19 @@
 class register extends CI_Controller {
 
 	 private $vUsername='';
-	 private $vNama='';
 	 private $vEmail='';
 	 private $vPassword1='';
 	 private $vPassword2='';
-	 private $vFirst='';
-	 private $vLast='';
-	 private $vJK='';
+	 private $vFirst='Mira';
+	 private $vLast='Utami';
+	 private $vJK='Wanita';
 	 private $vLahir='';
 	 private $vAddress='';
-	 private $vPend='';
-	 private $vPosisi='';
+	 private $vPend='S1/D4';
+	 private $vPosisi='Fresh Graduate';
 	 private $vDesc='';
 	 private $vGaji='';
-	 private $vLokasi='';
+	 private $vLokasi='1';
 	 private $status = array("STATUS"=>"");
 	 function __construct()
 	 {
@@ -39,12 +38,33 @@ class register extends CI_Controller {
 	
 	public function index()
 	{
-		$this->posisi();
+		//$this->posisi();
+		$this->load->view('login_view');
 		
-		$this->form_validation->set_rules('username','Username','required');
+		
+		$this->form_validation->set_rules('register_username','Nama','required');
 		$this->form_validation->set_rules('password2','Confirm Password','required');
 		$this->form_validation->set_rules('email','Email','required|valid_email');
-		$this->form_validation->set_rules('firstname','Nama Depan','required');
+		
+		
+		$this->vUsername=$this->input->post('register_username','true');
+		$this->vPassword1=$this->input->post('password1','true');
+		$this->vFirst=$this->input->post('register_nama','true');
+		$this->vPassword2=$this->input->post('password2','true');
+		$this->vEmail=$this->input->post('email','true');
+		
+		if($this->form_validation->run()){
+			if($this->cekUsername()){
+				if($this->cekPassword()){
+					$this->insertData();
+					redirect(site_url('home'));
+				}
+			}
+		}
+		/*$this->form_validation->set_rules('username','Username','required');
+		$this->form_validation->set_rules('password2','Confirm Password','required');
+		$this->form_validation->set_rules('email','Email','required|valid_email');
+		$this->form_validation->set_rules('nama','Nama Depan','required');
 		$this->form_validation->set_rules('lahir','Tanggal Lahir','required');
 		$this->form_validation->set_rules('pendidikan','Pendidikan','required');
 		
@@ -72,7 +92,7 @@ class register extends CI_Controller {
 					redirect(site_url('home'));
 				}
 			}
-		}
+		}*/
 	}
 	
 	private function cekEmail(){
@@ -98,21 +118,20 @@ class register extends CI_Controller {
 	private function insertData(){
 		$user = new Entity\Pelamar;
 		$nama = $this->vFirst.$this->vLast;
-		echo $nama;
 		$user->setUsername($this->vUsername);
 		$user->setPassword($this->vPassword1);
 		$user->setEmail($this->vEmail);
-		$user->setNama($nama);
+		$user->setNama($this->vFirst);
 		$user->setTglJoin();
 		$user->setJenisKelamin($this->vJK);
-		$user->setFoto("default.png");
-		$user->setAlamat($this->vAddress);
+		//$user->setFoto("default.png");
+		//$user->setAlamat($this->vAddress);
 		$user->setTglLahir($this->vLahir);
 		$user->setPendTerakhir($this->vPend);
-		$user->setPosisi($this->vPosisi);
-		$user->setDeskripsi($this->vDesc);
-		$user->setGaji($this->vGaji);
-		$user->setLokasi($this->vLokasi);
+		//$user->setPosisi($this->vPosisi);
+		//$user->setDeskripsi($this->vDesc);
+		//$user->setGaji($this->vGaji);
+		//$user->setLokasi($this->vLokasi);
 		$this->em->persist($user);
 		$this->em->flush();
 		

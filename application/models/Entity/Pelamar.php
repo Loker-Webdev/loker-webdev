@@ -16,7 +16,13 @@ class Pelamar
      * @Column(type="string", length=100, nullable=false)
      */
     protected $username;
-
+	
+	/**
+	 * @ManyToOne(targetEntity="Lokasi")
+     * @JoinColumn(name="id_lokasi", referencedColumnName="id_lokasi", nullable=false)
+     */
+    protected $id_lokasi;
+	
     /**
      * @Column(type="string", length=255, nullable=false)
      */
@@ -76,13 +82,7 @@ class Pelamar
      * @Column(type="string", length=1024, nullable=true)
      */
     protected $pref_gaji;
-	
-	/**
-	 * @ManyToOne(targetEntity="Lokasi")
-     * @JoinColumn(name="id_lokasi", referencedColumnName="id_lokasi", nullable=false)
-     */
-    protected $id_lokasi;
-	
+		
 	/**
      * @OneToMany(targetEntity="Mencari", mappedBy="username")
      */
@@ -175,7 +175,7 @@ class Pelamar
 	
 	public function setTglJoin()
 	{
-		$date = date("Y/m/d");
+		$date = date('Y-m-d',strtotime(str_replace('-', '/', date('Y-m-d'))));
 		$this->tgl_join=$date;
 	}
 	
@@ -224,7 +224,7 @@ class Pelamar
 		$this->pref_gaji=$gaji;
 	}
 	
-	public function getLokasi()
+	public function setLokasi($lokasi)
 	{
 		$this->id_lokasi=$lokasi;
 	}

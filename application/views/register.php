@@ -95,17 +95,20 @@
 			</div>
 			<div class="panel-body">
 			<?php echo form_open("register/index");?>
-				<form action="post">
+				
 					<div class="col-md-8">	
 					<h4>Data Akun</h4>					
 						<div class="col-md-6">
 							<h5>Username
 							<input class="form-control" name="username" type="text" value="<?php echo set_value('username');?>"/></h5>
-							
+							<span class="text-danger"></span>
+							<span class="notif" id="txtUsername"></span>
 						</div>
 						<div class="col-md-12">
+							<?php echo form_error('email', '<div style="color:red">','</div>');?>
 							<h5>Email
 							<input class="form-control" name="email" type="text" value="<?php echo set_value('email');?>"/></h5>
+							
 						</div>
 						<div class="col-md-6">
 							<h5>Password
@@ -199,7 +202,7 @@
 						<input style="float:right;" class="btn btn-primary" type="submit" value="Submit"/>
 						<br>
 					</div>
-				</form>
+				
 				<?php echo form_close(); ?>
 				<?php echo $this->session->flashdata('msg');?>
 			</div>
@@ -222,7 +225,7 @@
 		============================================================= -->
 		<script src="<?php echo base_url("assets/js/jquery.js")?>"></script>
 		<script src="<?php echo base_url("assets/js/bootstrap.min.js")?>"></script>
-		<script src="<?php echo base_url("assets/js/wow.js")?>"></script>
+		
 		<script src="<?php echo base_url("assets/js/jquery.singlePageNav.min.js")?>"></script>
 		<script src="<?php echo base_url("assets/js/custom.js")?>"></script>
 	</body>
