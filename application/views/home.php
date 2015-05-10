@@ -55,7 +55,6 @@
 							</ul>
 						</li>
 						<li><a href="<?php echo site_url('Lowongan/');?>">Lowongan</a></li>
-						<li><a href="<?php echo site_url('Lowongan/');?>">Lowongan</a></li>
 						<li><a href="<?php echo site_url('Profile/');?>">Resume</a></li>
 						<li><a href="#">Rekomendasi</a></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Login/Register
