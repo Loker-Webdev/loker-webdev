@@ -68,6 +68,17 @@ class Pelamar
     protected $deskripsi;
 	
 	/**
+     * @Column(type="string", length=1024, nullable=true)
+     */
+    protected $pref_gaji;
+	
+	/**
+	 * @ManyToOne(targetEntity="Lokasi")
+     * @JoinColumn(name="id_lokasi", referencedColumnName="id_lokasi", nullable=false)
+     */
+    protected $id_lokasi;
+	
+	/**
      * @OneToMany(targetEntity="Mencari", mappedBy="username")
      */
     protected $searchings;
