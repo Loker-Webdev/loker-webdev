@@ -87,126 +87,203 @@
 		============================================================= -->
 		<div id="detail-wrapper">
 		<div class="container">
-			<div class="panel panel-default">
-			<div class="panel-heading">
-				<h3>Register<br>
-				<small>Buat resume untuk melamar pekerjaan</small>
-				</h3>
-			</div>
-			<div class="panel-body">
-			<?php echo form_open("register/index");?>
-				
-					<div class="col-md-8">	
-					<h4>Data Akun</h4>					
-						<div class="col-md-6">
-							<h5>Username
-							<input class="form-control" name="username" type="text" value="<?php echo set_value('username');?>"/></h5>
-							<span class="text-danger"></span>
-							<span class="notif" id="txtUsername"></span>
-						</div>
-						<div class="col-md-12">
-							<?php echo form_error('email', '<div style="color:red">','</div>');?>
-							<h5>Email
-							<input class="form-control" name="email" type="text" value="<?php echo set_value('email');?>"/></h5>
-							
-						</div>
-						<div class="col-md-6">
-							<h5>Password
-							<input class="form-control" name="passwd" type="password" value="<?php echo set_value('passwd');?>"/></h5>
-						</div>
-						<div class="col-md-6">
-							<h5>Confirm Password
-							<input class="form-control" name="passwd2" type="password" value="<?php echo set_value('passwd2');?>"/></h5>
-						</div>
-					</div>
-					<div class="col-md-12"><hr></div>
-					<div class="col-md-8">	
-					<h4>Resume</h4>
-						<div class="col-md-6">
-							<h5>Nama Depan
-							<input class="form-control" name="firstname" type="text" value="<?php echo set_value('firstname');?>"/></h5>
-						</div>
-						<div class="col-md-6">
-							<h5>Nama Belakang
-							<input class="form-control" name="lastname" type="text" value="<?php echo set_value('lastname');?>"/></h5>
-						</div>
-						<div class="col-md-12">
-							<h5>Jenis Kelamin</h5>
-							<select class="form-control" name="jk" value="<?php echo set_value('jk');?>"/>
-								<option value="Wanita" selected="selected">Wanita</option>
-								<option value="Pria">Pria</option>
-							</select>
-						</div>
-						<div class="col-md-6">
-							<h5>Tanggal Lahir
-							<input class="form-control" name="lahir" type="text" value="<?php echo set_value('lahir');?>"/></h5>
-						</div>
-						<div class="col-md-12">
-							<h5>Alamat
-							<textarea class="form-control" name="address" value="<?php echo set_value('address');?>"></textarea></h5>
-						</div>
-						<div class="col-md-6">
-							<h5>Pendidikan Terakhir</h5>
-							<select class="form-control" name="pendidikan" value="<?php echo set_value('pendidikan');?>"/>
-								<option value="0" disabled="disabled" selected="selected">--Pilih jenjang pendidikan--</option>
-								<option value="SMA">SMA</option>
-								<option value="D1">D1</option>
-								<option value="D3">D3</option>
-								<option value="S1/D4">S1/D4</option>
-								<option value="S2">S2</option>
-								<option value="S3">S3</option>
-							</select>
-						</div>
-						<div class="col-md-7">
-							<h5>Posisi Terakhir</h5>
-							<select class="form-control" name="posisi" value="<?php echo set_value('posisi');?>"/>
-								<option value="0" disabled="disabled" selected="selected">--Pilih posisi terakhir--</option>
-								<?php foreach($posisi as $i){?>
-									<option value="<?php echo $i->getIdPosisi();?>"><?php echo $i->getNamaPosisi();?></option>
-								<?php } ?>
-							</select>
-						</div>
-						<div class="col-md-12">
-							<h5>Deskripsi diri
-							<textarea class="form-control" rows="4" name="deskripsi" value="<?php echo set_value('deskripsi');?>"></textarea></h5>
-						</div>
-					</div>
-					<div class="col-md-12"><hr></div>
-					<div class="col-md-8">	
-					<h4>Preferensi</h4>
-						<div class="col-md-12">
-							<h5>Gaji</h5>
-							<small>Keinginan gaji per bulan dalam mata uang rupiah</small>
-							<select class="form-control" name="gaji" value="<?php echo set_value('gaji');?>">
-								<option value="0" selected="selected">Tidak ada preferensi</option>
-								<option value="1">1,5jt - 3jt</option>
-								<option value="2">3jt - 5jt</option>
-								<option value="3">5jt - 10jt</option>
-								<option value="4">>10jt</option>
-							</select>
-						</div>
-						<div class="col-md-12">
-							<h5>Lokasi Penempatan</h5>
-							<small>Keinginan lokasi penempatan pekerjaan</small>
-							<select class="form-control" name="lokasi" value="<?php echo set_value('lokasi');?>"/>
-								<option value="1" selected="selected">Tidak ada preferensi</option>
-								<?php foreach($lokasi as $j){
-									if (!(($j->getIdLokasi()) == "1")) {?>
-									<option value="<?php echo $j->getIdLokasi();?>"><?php echo $j->getNamaLokasi();?></option>
-								<?php } } ?>
-							</select>
-						</div>
-					</div>
-					<div class="col-md-11">
-						<br>
-						<input style="float:right;" class="btn btn-primary" type="submit" value="Submit"/>
-						<br>
-					</div>
-				
-				<?php echo form_close(); ?>
-				<?php echo $this->session->flashdata('msg');?>
-			</div>
-			</div>
+			<div class="col-lg-1"></div>
+		<?php 
+          echo form_open("register/index");?>
+		  <div class="col-lg-12 col-sm-12 panel panel-default">
+          <fieldset>
+               <legend class="panel-heading"><h3>Register</h3><hr></legend>
+			   <div class="panel-body">
+			   <!--Username-->
+               <div class="form-group">
+               <div class="row colbox">
+               <div class="col-lg-3 col-sm-3">
+                    <label for="txt_username" class="control-label">Username</label>
+               </div>
+               <div class="col-lg-8 col-sm-8">
+                    <input class="form-control" id="txt_username" name="register_username" placeholder="Username" type="text" value="<?php echo set_value('reegister_username'); ?>" />
+                    <span class="text-danger"></span>
+					<span class="notif" id="txtUsername"></span>
+               </div>
+               </div>
+               </div>
+			   <!--Email-->
+			   <div class="form-group">
+               <div class="row colbox">
+               <div class="col-lg-3 col-sm-3">
+			   <?php echo form_error('email', '<div style="color:red">','</div>');?>
+                    <label for="txt_email" class="control-label">Email</label>
+               </div>
+               <div class="col-lg-8 col-sm-8">
+                    <input class="form-control" id="txt_email" name="email" placeholder="Email" type="text" value="<?php echo set_value('email'); ?>" />
+                    <span class="text-danger"></span>
+               </div>
+               </div>
+               </div>
+			   <!--Password-->
+               <div class="form-group">
+               <div class="row colbox">
+               <div class="col-lg-3 col-sm-3">
+               <label for="txt_password" class="control-label">Password</label>
+               </div>
+               <div class="col-lg-8 col-sm-8">
+                    <input class="form-control" id="password" name="password1" placeholder="Password" type="password" value="<?php echo set_value('password1'); ?>" />
+                    <span class="text-danger"></span>
+               </div>
+               </div>
+               </div>  
+			   <!--Confirm Password-->
+			   <div class="form-group">
+               <div class="row colbox">
+               <div class="col-lg-3 col-sm-3">
+			   <?php echo form_error('password2', '<div style="color:red">','</div>');?>
+               <label for="txt_password" class="control-label">Confirm Password</label>
+               </div>
+               <div class="col-lg-8 col-sm-8">
+                    <input class="form-control" id="password2" name="password2" placeholder="Confirm Password" type="password" value="<?php echo set_value('password2'); ?>" />
+                    <span class="text-danger"></span>
+               </div>
+               </div>
+               </div>
+			   <hr>
+			   <!--Nama-->
+			   <div class="form-group">
+               <div class="row colbox">
+               <div class="col-lg-3 col-sm-3">
+					<?php echo form_error('register_nama', '<div style="color:red">','</div>');?>
+                    <label for="txt_nama" class="control-label">Nama</label>
+               </div>
+               <div class="col-lg-8 col-sm-8">
+                    <input class="form-control" id="txt_nama" name="register_nama" placeholder="Nama" type="text" value="<?php echo set_value('register_nama'); ?>" />
+                    <span class="text-danger"></span>
+               </div>
+               </div>
+               </div>
+			   <!--Jenis Kelamin-->
+			   <div class="form-group">
+               <div class="row colbox">
+               <div class="col-lg-3 col-sm-3">
+					<?php echo form_error('jk', '<div style="color:red">','</div>');?>
+                    <label for="txt_nama" class="control-label">Jenis Kelamin</label>
+               </div>
+               <div class="col-lg-8 col-sm-8">
+					<select class="form-control" id="select_jk" name="jk" value="<?php set_value('jk');?>">
+						<option value="Wanita" selected="selected">Wanita</option>
+						<option value="Pria">Pria</option>
+					</select>
+                    <span class="text-danger"></span>
+               </div>
+               </div>
+               </div>
+			   <!--Tanggal Lahir-->
+			   <div class="form-group">
+               <div class="row colbox">
+               <div class="col-lg-3 col-sm-3">
+					<?php echo form_error('lahir', '<div style="color:red">','</div>');?>
+                    <label for="txt_lahir" class="control-label">Tanggal Lahir</label>
+               </div>
+               <div class="col-lg-8 col-sm-8">
+                    <input class="form-control" id="txt_lahir" name="lahir" placeholder="YYYY-mm-dd" type="text" value="<?php echo set_value('lahir'); ?>" />
+                    <span class="text-danger"></span>
+               </div>
+               </div>
+               </div>
+			   <!--Alamat-->
+			   <div class="form-group">
+               <div class="row colbox">
+               <div class="col-lg-3 col-sm-3">
+					<?php echo form_error('alamat', '<div style="color:red">','</div>');?>
+                    <label for="txt_alamat" class="control-label">Alamat</label>
+               </div>
+               <div class="col-lg-8 col-sm-8">
+                    <textarea class="form-control" id="txt_alamat" name="address" type="text" value="<?php echo set_value('address'); ?>"></textarea>
+                    <span class="text-danger"></span>
+               </div>
+               </div>
+               </div>
+			   <!--Pendidikan Terakhir-->
+			   <div class="form-group">
+               <div class="row colbox">
+               <div class="col-lg-3 col-sm-3">
+					<?php echo form_error('pend', '<div style="color:red">','</div>');?>
+                    <label for="txt_nama" class="control-label">Pendidikan</label>
+               </div>
+               <div class="col-lg-8 col-sm-8">
+					<select class="form-control" id="select_pend" name="pendidikan" value="<?php set_value('pendidikan');?>">
+						<option value="0" disabled="disabled" selected="selected">--Pilih jenjang pendidikan--</option>
+						<option value="SMA">SMA</option>
+						<option value="D1">D1</option>
+						<option value="D3">D3</option>
+						<option value="S1/D4">S1/D4</option>
+						<option value="S2">S2</option>
+						<option value="S3">S3</option>
+					</select>
+                    <span class="text-danger"></span>
+               </div>
+               </div>
+               </div>
+			   <!--Posisi Terakhir-->
+			   <div class="form-group">
+               <div class="row colbox">
+               <div class="col-lg-3 col-sm-3">
+					<?php echo form_error('pend', '<div style="color:red">','</div>');?>
+                    <label for="txt_nama" class="control-label">Posisi Terakhir</label>
+               </div>
+               <div class="col-lg-8 col-sm-8">
+					<select class="form-control" id="select_posisi" name="posisi" value="<?php set_value('posisi');?>">
+						<option value="0" disabled="disabled" selected="selected">--Pilih posisi terakhir--</option>
+						<?php foreach($posisi as $i){?>
+							<option value="<?php echo $i->getNamaPosisi();?>"><?php echo $i->getNamaPosisi();?></option>
+						<?php } ?>
+					</select>
+                    <span class="text-danger"></span>
+               </div>
+               </div>
+               </div>
+			   <!--Deskripsi-->
+			   <div class="form-group">
+               <div class="row colbox">
+               <div class="col-lg-3 col-sm-3">
+					<?php echo form_error('deskripsi', '<div style="color:red">','</div>');?>
+                    <label for="txt_alamat" class="control-label">Deskripsi</label>
+               </div>
+               <div class="col-lg-8 col-sm-8">
+                    <textarea class="form-control" rows="5" id="txt_deskripsi" name="deskripsi" type="text" value="<?php echo set_value('deskripsi'); ?>"></textarea>
+                    <span class="text-danger"></span>
+               </div>
+               </div>
+               </div>
+			   <!--Gaji-->
+			   <div class="form-group">
+               <div class="row colbox">
+               <div class="col-lg-3 col-sm-3">
+					<?php echo form_error('gaji', '<div style="color:red">','</div>');?>
+                    <label for="txt_nama" class="control-label">Gaji</label>
+               </div>
+               <div class="col-lg-8 col-sm-8">
+					<select class="form-control" id="select_gaji" name="gaji" value="<?php set_value('gaji');?>">
+						<option value="ANY" selected="selected">Tidak ada preferensi</option>
+						<option value="1,5jt - 3jt">1,5jt - 3jt</option>
+						<option value="3jt - 5jt">3jt - 5jt</option>
+						<option value="5jt - 10jt">5jt - 10jt</option>
+						<option value=">10jt">>10jt</option>
+					</select>
+                    <span class="text-danger"></span>
+               </div>
+               </div>
+               </div>
+			   <!--Button Submit-->
+			   <div class="form-group">
+               <div class="col-lg-12 col-sm-12 text-center">
+                    <input id="btn_register" name="btn_register" type="submit" class="btn btn-default" value="Register"  />
+               </div>
+               </div>
+			   </div>
+          </fieldset>
+		 
+          <?php echo form_close(); ?>
+          <?php echo $this->session->flashdata('msg'); ?>
+		</div>
 		</div>
 		</div>
 		<!--END OF CONTENT-->
@@ -226,7 +303,5 @@
 		<script src="<?php echo base_url("assets/js/jquery.js")?>"></script>
 		<script src="<?php echo base_url("assets/js/bootstrap.min.js")?>"></script>
 		
-		<script src="<?php echo base_url("assets/js/jquery.singlePageNav.min.js")?>"></script>
-		<script src="<?php echo base_url("assets/js/custom.js")?>"></script>
 	</body>
 </html>

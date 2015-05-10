@@ -6,16 +6,16 @@ class register extends CI_Controller {
 	 private $vEmail='';
 	 private $vPassword1='';
 	 private $vPassword2='';
-	 private $vFirst='Mira';
-	 private $vLast='Utami';
-	 private $vJK='Wanita';
-	 private $vLahir='2000/02/20';
+	 private $vFirst='';
+	 private $vLast='';
+	 private $vJK='';
+	 private $vLahir='';
 	 private $vAddress='';
-	 private $vPend='S1/D4';
-	 private $vPosisi='Fresh Graduate';
+	 private $vPend='';
+	 private $vPosisi='';
 	 private $vDesc='';
 	 private $vGaji='';
-	 private $vLokasi='1';
+	 private $vLokasi='';
 	 private $status = array("STATUS"=>"");
 	 function __construct()
 	 {
@@ -38,8 +38,8 @@ class register extends CI_Controller {
 	
 	public function index()
 	{
-		//$this->posisi();
-		$this->load->view('login_view');
+		$this->posisi();
+		//$this->load->view('login_view');
 		
 		
 		$this->form_validation->set_rules('register_username','Nama','required');
@@ -52,6 +52,13 @@ class register extends CI_Controller {
 		$this->vFirst=$this->input->post('register_nama','true');
 		$this->vPassword2=$this->input->post('password2','true');
 		$this->vEmail=$this->input->post('email','true');
+		$this->vJK=$this->input->post('jk','true');
+		$this->vLahir=$this->input->post('lahir','true');
+		$this->vAddress=$this->input->post('address','true');
+		$this->vPend=$this->input->post('pendidikan','true');
+		$this->vPosisi=$this->input->post('posisi','true');
+		$this->vDesc=$this->input->post('deskripsi','true');
+		$this->vGaji=$this->input->post('gaji','true');
 		
 		if($this->form_validation->run()){
 			if($this->cekUsername()){
@@ -61,7 +68,7 @@ class register extends CI_Controller {
 				}
 			}
 		}
-		/*$this->form_validation->set_rules('username','Username','required');
+	/*	$this->form_validation->set_rules('username','Username','required');
 		$this->form_validation->set_rules('password2','Confirm Password','required');
 		$this->form_validation->set_rules('email','Email','required|valid_email');
 		$this->form_validation->set_rules('nama','Nama Depan','required');
@@ -117,21 +124,22 @@ class register extends CI_Controller {
 	
 	private function insertData(){
 		$user = new Entity\Pelamar;
-		$nama = $this->vFirst.$this->vLast;
 		$user->setUsername($this->vUsername);
+		//$user->setLokasi($this->vLokasi);
 		$user->setPassword($this->vPassword1);
-		$user->setEmail($this->vEmail);
 		$user->setNama($this->vFirst);
 		$user->setTglJoin();
 		$user->setJenisKelamin($this->vJK);
-		$user->setFoto("default.png");
+		$user->setFoto("default.png");		
 		$user->setAlamat($this->vAddress);
+		$user->setEmail($this->vEmail);
 		$user->setTglLahir($this->vLahir);
 		$user->setPendTerakhir($this->vPend);
 		$user->setPosisi($this->vPosisi);
 		$user->setDeskripsi($this->vDesc);
 		$user->setGaji($this->vGaji);
-		$user->setLokasi($this->vLokasi);
+		
+		
 		$this->em->persist($user);
 		$this->em->flush();
 		

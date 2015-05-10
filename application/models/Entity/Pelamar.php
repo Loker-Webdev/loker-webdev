@@ -19,7 +19,7 @@ class Pelamar
 	
 	/**
 	 * @ManyToOne(targetEntity="Lokasi")
-     * @JoinColumn(name="id_lokasi", referencedColumnName="id_lokasi", nullable=false)
+     * @JoinColumn(name="id_lokasi", referencedColumnName="id_lokasi", nullable=true)
      */
     protected $id_lokasi;
 	
