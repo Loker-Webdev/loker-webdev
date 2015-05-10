@@ -175,8 +175,7 @@ class Pelamar
 	
 	public function setTglJoin()
 	{
-		$date = date('Y-m-d',strtotime(str_replace('-', '/', date('Y-m-d'))));
-		$this->tgl_join=$date;
+		$this->tgl_join=new \DateTime("now");
 	}
 	
 	public function setJenisKelamin($JK)
@@ -201,7 +200,8 @@ class Pelamar
 	
 	public function setTglLahir($lahir)
 	{
-		$this->tgl_lahir=$lahir;
+		$date = new \DateTime(''.$lahir.'');
+		$this->tgl_lahir=$date;
 	}
 	
 	public function setPendTerakhir($pend)
@@ -224,9 +224,10 @@ class Pelamar
 		$this->pref_gaji=$gaji;
 	}
 	
-	public function setLokasi($lokasi)
+	public function setLokasi($a)
 	{
-		$this->id_lokasi=$lokasi;
+		$this->id_lokasi=$a;
 	}
+	
 }
 ?>
