@@ -55,6 +55,7 @@
 							</ul>
 						</li>
 						<li><a href="<?php echo site_url('Lowongan/');?>">Lowongan</a></li>
+						<li><a href="<?php echo site_url('Lowongan/');?>">Lowongan</a></li>
 						<li><a href="<?php echo site_url('Profile/');?>">Resume</a></li>
 						<li><a href="#">Rekomendasi</a></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Login/Register
@@ -215,7 +216,7 @@
 		============================================================= -->
 		<script src="<?php echo base_url("assets/js/jquery.js")?>"></script>
 		<script src="<?php echo base_url("assets/js/bootstrap.min.js")?>"></script>
-		<script src="<?php echo base_url("assets/js/wow.min.js")?>"></script>
+		<script src="<?php echo base_url("assets/js/wow.js")?>"></script>
 		<script src="<?php echo base_url("assets/js/jquery.singlePageNav.min.js")?>"></script>
 		<script src="<?php echo base_url("assets/js/custom.js")?>"></script>
 	</body>
