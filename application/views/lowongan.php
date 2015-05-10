@@ -36,7 +36,7 @@
 						<span class="icon icon-bar"></span>
 						<span class="icon icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#"><img width="45" height="45" src="<?echo base_url("assets/brief.png")?>"/>Loker</a>
+					<a class="navbar-brand" href="<?php echo site_url('Home/')?>"><img width="45" height="45" src="<?echo base_url("assets/brief.png")?>"/>Loker</a>
 				</div>
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav navbar-right text-uppercase">
@@ -141,7 +141,7 @@
 		============================================================= -->
 		<script src="<?php echo base_url("assets/js/jquery.js")?>"></script>
 		<script src="<?php echo base_url("assets/js/bootstrap.min.js")?>"></script>
-		<script src="<?php echo base_url("assets/js/wow.min.js")?>"></script>
+		
 		<script src="<?php echo base_url("assets/js/jquery.singlePageNav.min.js")?>"></script>
 		<script src="<?php echo base_url("assets/js/custom.js")?>"></script>
 	</body>
