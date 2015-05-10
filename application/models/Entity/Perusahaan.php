@@ -102,4 +102,5 @@ class Perusahaan
 	{
 		return $this->Email;
 	}
+}
 ?>

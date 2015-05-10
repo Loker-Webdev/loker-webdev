@@ -20,11 +20,11 @@
 		<link rel="stylesheet" href="<?php echo base_url("assets/css/templatemo-style.css")?>">
 	</head>
 	<body>
-		<!-- PRELOADER
+		<!-- PRELOADER -->
 		=============================================================
 		<div class="preloader">
 			<div class="sk-spinner sk-spinner-rotating-plane"></div>
-    	 </div> -->
+    	 </div> 
 		
 		<!-- NAVIGATION
 		============================================================= -->
