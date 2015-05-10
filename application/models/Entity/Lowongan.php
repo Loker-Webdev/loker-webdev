@@ -43,14 +43,14 @@ class Lowongan
     protected $username;
 	
 	/**
-     * @Column(type="date", nullable=false)
-     */
-    protected $tgl_posting;
-	
-	/**
      * @Column(type="string", length=1024, nullable=true)
      */
     protected $judul;
+    
+	/**
+     * @Column(type="date", nullable=false)
+     */
+    protected $tgl_posting;
 	
 	/**
      * @Column(type="date", nullable=false)
@@ -121,6 +121,11 @@ class Lowongan
 	{
 		return $this->username;
 	}
+
+	public function getJudul()
+	{
+		return $this->judul;
+	}
 	
 	public function getTglPosting()
 	{
@@ -160,11 +165,6 @@ class Lowongan
 	public function getJenisKelamin()
 	{
 		return $this->jenis_kelamin;
-	}
-	
-	public function getPosisiTerakhir()
-	{
-		return $this->posisi_terakhir;
 	}
 	
 	public function getDeskripsi()

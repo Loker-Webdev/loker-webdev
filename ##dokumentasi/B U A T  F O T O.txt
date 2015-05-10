@@ -1,0 +1,29 @@
+<tr>
+					<td>Foto</td>
+					<td>:</td>
+					<td><input type="hidden" name="maks_upload_file" size="2000000"/>
+					<input type="file" name="file" id="file"/></td>
+				</tr>
+
+
+ini buat yg save nya
+-----------------------
+
+$namafile = $_FILES['file']['name'];
+	// file temporary
+	$filetmp = $_FILES['file']['tmp_name'];
+	// folder target
+	$typefile = $_FILES['file']['type'];
+	$ukuranfile = $_FILES['file']['size'];
+	$target_path = "foto/";
+	// nama file yg diupload
+	$target_path = $target_path .basename($_FILES['file']['name']);
+
+if(move_uploaded_file($_FILES['file']['tmp_name'],$target_path)){
+	echo "File ".basename($_FILES['file']['name'])." telah terupload.";
+	header('location:index.php');
+}else{
+	echo ("Maaf File tidak dapat diupload");}
+	// eksekusi jika benar atau gagal
+
+

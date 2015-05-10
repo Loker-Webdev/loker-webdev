@@ -2,121 +2,110 @@
 
 class Lowongan extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -  
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in 
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
-	 function __construct()
-	 {
+	private $vId_lowongan='';
+	private $vId_kategori='';
+	private $vId_lokasi='';
+	private $vId_posisi='';
+	private $vUsername='';
+	private $vTgl_posting='';
+	private $vJudul='';
+	private $vTgl_kadaluarsa='';
+	private $vJam_kerja='';
+	private $vGaji='';
+	private $vPend_terakhir='';
+	private $vUmur_min='';
+	private $vUmur_max='';
+	private $vJenis_kelamin='';
+	private $vPosisi_terakhir='';
+	private $vDeskripsi='';
+	//private $status = array("STATUS"=>"");
+
+	function __construct()
+	{
 		parent::__construct();
+		$this->load->helper('url');
 		$this->load->helper('form');
 		$this->load->library('form_validation');
-		///
 		$this->load->library('doctrine');
         $this->em = $this->doctrine->em;
-		///
-	}
-
-	public function showMovies(){
-		$movieRepository=$this->em->getRepository('Entity\Film');
-		$data['allMovies']= $movieRepository->findby(array(), array('id_film' => 'ASC'),3);
-		$this->load->view('home',$data);
+		$this->load->library('session');
 	}
 
 	public function index()
 	{
-		$this->load->view('lowongan');
-		
-		/*TUTORIAL*/
-		/*insert
-		$user = new Entity\User;
-		$user->setUsername('Joseph');
-		$user->setPassword('secretPassw0rd');
-		$user->setNama('yoga');
-		$user->setEmail('josephatwildlyinaccuratedotcom');
-		$this->em->persist($user);
-		$this->em->flush();
-		echo "insert berhasil";
-		
-		//findall (return array)
-		$userRepository=$this->em->getRepository('Entity\User');
-		$allUser=$userRepository->findAll();
-		foreach($allUser as $i)
-		{
-		echo $i->getUsername(). ' find all <br>';	
-		} 
-		
-		//findby (return array)
-		$userRepository=$this->em->getRepository('Entity\User');
-		$singleUser=$userRepository->findByUsername('Joseph');//findBy(array('username'=>'Joseph'));
-		foreach($singleUser as $i)
-		{
-		echo $i->getUsername().' find by <br>';	
-		} 
-		
-		//find (return object)
-		$singleUser=$this->em->find('Entity\User','Joseph');//findBy(array('username'=>'Joseph'));
-		if(!empty($singleUser) && !is_null($singleUser)){
-			echo $singleUser->getUsername().' find <br>';	
-		}else
-		{
-			echo "tidak ada di database<br>";
-		}
+		$this->load->view('addLowongan_view');
+		$this->form_validation->set_rules('register_username','Nama','required');
+		$this->form_validation->set_rules('password2','Confirm Password','required');
+		$this->form_validation->set_rules('email','Email','required|valid_email');
 		
 		
-		//orderby 
-		$userRepository=$this->em->getRepository('Entity\User');
-		$singleUser=$userRepository->findBy(array(),array("nama"=>"DESC"));//findBy(array('username'=>'Joseph'));
-		foreach($singleUser as $i)
-		{
-		echo $i->getUsername().' ORDER by <br>';	
-		} 
-
-		//limit offset
-		$userRepository=$this->em->getRepository('Entity\User');
-		$singleUser=$userRepository->findBy(array(),array("nama"=>"DESC"),5,0);//findBy(array('username'=>'Joseph'));
-		foreach($singleUser as $i)
-		{
-		echo $i->getUsername().' limit offset <br>';	
-		} 		
+		$this->vUsername=$this->input->post('register_username','true');
+		$this->vPassword1=$this->input->post('password1','true');
+		$this->vNama=$this->input->post('register_nama','true');
+		$this->vPassword2=$this->input->post('password2','true');
+		$this->vEmail=$this->input->post('email','true');
 		
-		//update
-		$singleUser=$this->em->find('Entity\User','Joseph');
-		if(!empty($singleUser) && !is_null($singleUser)){
-			$singleUser->setUsername('hihihi');
-			$this->em->flush();
-			echo "updated <br>";
-		}else
-		{
-			echo "not updated";
-		}
-		
-		//delete
-		$singleUser=$this->em->find('Entity\User','hihihi');
-		if(!empty($singleUser) && !is_null($singleUser)){
-			$this->em->remove($singleUser);
-			$this->em->flush();
-			echo "deleted <br>";
-		}else
-		{
-			echo "not deleted";
-		}
-		
-		//$this->load->view('home');*/
-		/*END OF TUTORIAL*/
+		if($this->form_validation->run()){
+			if($this->cekUsername()){
+				if($this->cekPassword()){
+					$this->insertData();
+					redirect(site_url('home'));
+				}
+			}
+		}			
 	}
-}
 
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
+	private function cekEmail(){
+		if($this->form_validation->valid_email($this->vEmail)){
+			return true;
+		}else{
+			$this->status = array("STATUS"=>"Email Tidak Sama");
+			json_encode ($this->status) ;
+			return false;
+		}
+	}
+
+	private function cekPassword(){
+		if($this->vPassword1==$this->vPassword2){
+			return true;
+		}else{
+			$this->status = array("STATUS"=>"Password Tidak Sama");
+			json_encode ($this->status) ;
+			return false;			
+		}
+	}
+
+	private function cekUsername(){
+		$userRepository=$this->em->getRepository('Entity\User');
+		$singleUser=$userRepository->findOneBy(array('username'=>$this->vUsername));
+		if($singleUser!=null){
+			return false;
+		}else{
+			$this->status = array("STATUS"=>"Username Sudah Ada");
+			json_encode ($this->status) ;	
+			return true;
+		}
+	}
+
+	private function insertData(){
+		$lowongan = new Entity\Lowongan;
+		$lowongan->setId_lowongan($this->vId_lowongan);
+		$lowongan->setId_kategori($this->vId_kategori);
+		$lowongan->setId_lokasi($this->vId_lokasi);
+		$lowongan->setId_posisi($this->vId_posisi);
+		$lowongan->setUsername($this->vUsername);
+		$lowongan->setTgl_posting($this->vTgl_posting);
+		$lowongan->setJudul($this->vJudul);
+		$lowongan->setTgl_kadaluarsa($this->vTgl_kadaluarsa);
+		$lowongan->setJam_kerja($this->vJam_kerja);
+		$lowongan->setGaji($this->vGaji);
+		$lowongan->setPend_terakhir($this->vPend_terakhir);
+		$lowongan->setUmur_min($this->vUmur_min);
+		$lowongan->setUmur_max($this->vUmur_max);
+		$lowongan->setJenis_kelamin($this->vJenis_kelamin);
+		$lowongan->setPosisi_terakhir($this->vPosisi_terakhir);
+		$lowongan->setDeskripsi($this->vDeskripsi);
+		$this->em->persist($lowongan);
+		$this->em->flush();		
+	}	
+}
