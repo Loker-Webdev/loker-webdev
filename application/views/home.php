@@ -23,12 +23,13 @@
 
 	</head>
 	<body>
+
 		<!-- PRELOADER 
 		============================================================= -->
 		<div class="preloader">
 			<div class="sk-spinner sk-spinner-rotating-plane"></div>
     	 </div>
-		 
+
 		<!-- NAVIGATION
 		============================================================= -->
 		<nav class="navbar navbar-default navbar-fixed-top templatemo-nav" role="navigation">
@@ -50,11 +51,11 @@
 								<li role="presentation"><a role="menuitem" tabindex="-1" href="#home">Home</a></li>
 								<li role="presentation"><a role="menuitem" tabindex="-1" href="#feature">Fitur</a></li>
 								<li role="presentation"><a role="menuitem" tabindex="-1" href="#feature1">Kerja Sama</a></li>
-								<li role="presentation"><a role="menuitem" tabindex="-1" href="#contact">Contact Us</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="#contact">Contact Us</a></li>							
 							</ul>
 						</li>
-						<li><a href="<?php echo site_url('Lowongan');?>">Lowongan</a></li>
-						<li><a href="<?php echo site_url('Profile');?>">Resume</a></li>
+						<li><a href="<?php echo site_url('Lowongan/');?>">Lowongan</a></li>
+						<li><a href="<?php echo site_url('Profile/');?>">Resume</a></li>
 						<li><a href="#">Rekomendasi</a></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Login/Register
 						<span class="caret"></span>
@@ -85,7 +86,6 @@
 				</div>
 			</div>
 		</nav>
-		
 		<!-- HOME
 		============================================================= -->
 		<section id="home">
