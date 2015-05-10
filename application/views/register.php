@@ -5,7 +5,7 @@
     	http://www.templatemo.com/preview/templatemo_446_boxer
     	-->
 		<meta charset="utf-8">
-		<title>Loker - Page</title>
+		<title>Loker - Register</title>
 		<link rel="icon" href="<?php echo base_url("assets/brief.png")?>"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,10 +21,10 @@
 	</head>
 	<body>
 		<!-- PRELOADER
-		============================================================= -->
+		============================================================= 
 		<div class="preloader">
 			<div class="sk-spinner sk-spinner-rotating-plane"></div>
-    	 </div>
+    	 </div>-->
 		
 		<!-- NAVIGATION
 		============================================================= -->
@@ -44,14 +44,14 @@
 							<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-								<li role="presentation"><a role="menuitem" tabindex="-1" href="#home">Home</a></li>
-								<li role="presentation"><a role="menuitem" tabindex="-1" href="#feature">Fitur</a></li>
-								<li role="presentation"><a role="menuitem" tabindex="-1" href="#feature1">Kerja Sama</a></li>
-								<li role="presentation"><a role="menuitem" tabindex="-1" href="#contact">Contact Us</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="<?php echo site_url("Home")?>">Home</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="<?php echo site_url("Home")?>#feature">Fitur</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="<?php echo site_url("Home")?>#feature1">Kerja Sama</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="<?php echo site_url("Home")?>#contact">Contact Us</a></li>
 							</ul>
 						</li>
-						<li><a href="#">Lowongan</a></li>
-						<li><a href="#">Resume</a></li>
+						<li><a href="<?php echo site_url("Lowongan/")?>">Lowongan</a></li>
+						<li><a href="<?php echo site_url("Profil/")?>">Resume</a></li>
 						<li><a href="#">Rekomendasi</a></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Login/Register
 						<span class="caret"></span>
@@ -65,14 +65,14 @@
 								<input name="password" id="password" type="password" placeholder="Password"><br><br>
 								</div>
 								<div class="col-sm-12">
-								<center><button type="button" id="btnLogin" class="btn">Login</button><br></center>
+								<center><input type="submit" id="btnLogin" class="btn" value="Login"></button><br></center>
 								</div>
 								<div class="col-sm-12">
 									<div class="divider"></div>
 								</div>
-								<div class="col-sm-12">
-								<center><button type="button" id="btnLogin" class="btn btn-success">Register</button></center>
-								</div>
+							  </form>
+							  <form action="<?php echo site_url("Register/");?>" method="link" class="col-sm-12">
+								<center><input type="submit" id="btnRegister" class="btn btn-success" value="Register"></input></center>
 							  </form>
 							</div>
 						</li>
@@ -94,24 +94,26 @@
 				</h3>
 			</div>
 			<div class="panel-body">
-				<form>
+			<?php echo form_open("register/index");?>
+				<form action="post">
 					<div class="col-md-8">	
 					<h4>Data Akun</h4>					
 						<div class="col-md-6">
 							<h5>Username
-							<input class="form-control" id="username" type="text"/></h5>
+							<input class="form-control" name="username" type="text" value="<?php echo set_value('username');?>"/></h5>
+							
 						</div>
 						<div class="col-md-12">
 							<h5>Email
-							<input class="form-control" id="email" type="text"/></h5>
+							<input class="form-control" name="email" type="text" value="<?php echo set_value('email');?>"/></h5>
 						</div>
 						<div class="col-md-6">
 							<h5>Password
-							<input class="form-control" id="passwd" type="text"/></h5>
+							<input class="form-control" name="passwd" type="password" value="<?php echo set_value('passwd');?>"/></h5>
 						</div>
 						<div class="col-md-6">
 							<h5>Confirm Password
-							<input class="form-control" id="passwd2" type="text"/></h5>
+							<input class="form-control" name="passwd2" type="password" value="<?php echo set_value('passwd2');?>"/></h5>
 						</div>
 					</div>
 					<div class="col-md-12"><hr></div>
@@ -119,48 +121,87 @@
 					<h4>Resume</h4>
 						<div class="col-md-6">
 							<h5>Nama Depan
-							<input class="form-control" id="firstname" type="text"/></h5>
+							<input class="form-control" name="firstname" type="text" value="<?php echo set_value('firstname');?>"/></h5>
 						</div>
 						<div class="col-md-6">
 							<h5>Nama Belakang
-							<input class="form-control" id="lastname" type="text"/></h5>
+							<input class="form-control" name="lastname" type="text" value="<?php echo set_value('lastname');?>"/></h5>
 						</div>
 						<div class="col-md-12">
 							<h5>Jenis Kelamin</h5>
-							<p class="radio-inline"><input type="radio" name="jk"> Wanita</p>
-							<p class="radio-inline"><input type="radio" name="jk"> Pria</p>
+							<select class="form-control" name="jk" value="<?php echo set_value('jk');?>"/>
+								<option value="Wanita" selected="selected">Wanita</option>
+								<option value="Pria">Pria</option>
+							</select>
 						</div>
 						<div class="col-md-6">
 							<h5>Tanggal Lahir
-							<input class="form-control" id="lahir" type="text"/></h5>
+							<input class="form-control" name="lahir" type="text" value="<?php echo set_value('lahir');?>"/></h5>
 						</div>
 						<div class="col-md-12">
 							<h5>Alamat
-							<textarea class="form-control" id="address"></textarea></h5>
+							<textarea class="form-control" name="address" value="<?php echo set_value('address');?>"></textarea></h5>
 						</div>
 						<div class="col-md-6">
 							<h5>Pendidikan Terakhir</h5>
-							<select class="form-control" id="pendidikan"/>
+							<select class="form-control" name="pendidikan" value="<?php echo set_value('pendidikan');?>"/>
 								<option value="0" disabled="disabled" selected="selected">--Pilih jenjang pendidikan--</option>
-								<option value="1">SMA</option>
-								<option value="1">D1</option>
-								<option value="1">D3</option>
-								<option value="1">S1/D4</option>
-								<option value="1">S2</option>
-								<option value="1">S3</option>
+								<option value="SMA">SMA</option>
+								<option value="D1">D1</option>
+								<option value="D3">D3</option>
+								<option value="S1/D4">S1/D4</option>
+								<option value="S2">S2</option>
+								<option value="S3">S3</option>
 							</select>
 						</div>
 						<div class="col-md-7">
 							<h5>Posisi Terakhir</h5>
-							<select class="form-control" id="posisi"/>
+							<select class="form-control" name="posisi" value="<?php echo set_value('posisi');?>"/>
 								<option value="0" disabled="disabled" selected="selected">--Pilih posisi terakhir--</option>
 								<?php foreach($posisi as $i){?>
 									<option value="<?php echo $i->getIdPosisi();?>"><?php echo $i->getNamaPosisi();?></option>
 								<?php } ?>
 							</select>
 						</div>
+						<div class="col-md-12">
+							<h5>Deskripsi diri
+							<textarea class="form-control" rows="4" name="deskripsi" value="<?php echo set_value('deskripsi');?>"></textarea></h5>
+						</div>
+					</div>
+					<div class="col-md-12"><hr></div>
+					<div class="col-md-8">	
+					<h4>Preferensi</h4>
+						<div class="col-md-12">
+							<h5>Gaji</h5>
+							<small>Keinginan gaji per bulan dalam mata uang rupiah</small>
+							<select class="form-control" name="gaji" value="<?php echo set_value('gaji');?>">
+								<option value="0" selected="selected">Tidak ada preferensi</option>
+								<option value="1">1,5jt - 3jt</option>
+								<option value="2">3jt - 5jt</option>
+								<option value="3">5jt - 10jt</option>
+								<option value="4">>10jt</option>
+							</select>
+						</div>
+						<div class="col-md-12">
+							<h5>Lokasi Penempatan</h5>
+							<small>Keinginan lokasi penempatan pekerjaan</small>
+							<select class="form-control" name="lokasi" value="<?php echo set_value('lokasi');?>"/>
+								<option value="1" selected="selected">Tidak ada preferensi</option>
+								<?php foreach($lokasi as $j){
+									if (!(($j->getIdLokasi()) == "1")) {?>
+									<option value="<?php echo $j->getIdLokasi();?>"><?php echo $j->getNamaLokasi();?></option>
+								<?php } } ?>
+							</select>
+						</div>
+					</div>
+					<div class="col-md-11">
+						<br>
+						<input style="float:right;" class="btn btn-primary" type="submit" value="Submit"/>
+						<br>
 					</div>
 				</form>
+				<?php echo form_close(); ?>
+				<?php echo $this->session->flashdata('msg');?>
 			</div>
 			</div>
 		</div>

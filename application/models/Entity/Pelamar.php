@@ -23,6 +23,11 @@ class Pelamar
     protected $password;
 	
 	/**
+     * @Column(type="string", length=255, nullable=false)
+     */
+    protected $nama;
+	
+	/**
      * @Column(type="date", nullable=false)
      */
     protected $tgl_join;
@@ -93,6 +98,11 @@ class Pelamar
 		return $this->password;
 	}
 	
+	public function getNama()
+	{
+		return $this->nama;
+	}
+	
 	public function getTglJoin()
 	{
 		return $this->tgl_join;
@@ -136,6 +146,87 @@ class Pelamar
 	public function getDeskripsi()
 	{
 		return $this->deskripsi;
+	}
+
+	public function getGaji()
+	{
+		return $this->pref_gaji;
+	}
+	
+	public function getLokasi()
+	{
+		return $this->id_lokasi;
+	}
+	
+	public function setUsername($username)
+	{
+		$this->username=$username;
+	}
+	
+	public function setPassword($passwd)
+	{
+		$this->password=$passwd;
+	}
+	
+	public function setNama($name)
+	{
+		$this->nama=$name;
+	}
+	
+	public function setTglJoin()
+	{
+		$date = date("Y/m/d");
+		$this->tgl_join=$date;
+	}
+	
+	public function setJenisKelamin($JK)
+	{
+		$this->jenis_kelamin=$JK;
+	}
+	
+	public function setFoto($file)
+	{
+		$this->foto=$file;
+	}
+	
+	public function setAlamat($address)
+	{
+		$this->alamat=$address;
+	}
+		
+	public function setEmail($email)
+	{
+		$this->email=$email;
+	}
+	
+	public function setTglLahir($lahir)
+	{
+		$this->tgl_lahir=$lahir;
+	}
+	
+	public function setPendTerakhir($pend)
+	{
+		$this->pend_terakhir=$pend;
+	}
+	
+	public function setPosisi($posisi)
+	{
+		$this->posisi=$posisi;
+	}
+	
+	public function setDeskripsi($desc)
+	{
+		$this->deskripsi=$desc;
+	}
+	
+	public function setGaji($gaji)
+	{
+		$this->pref_gaji=$gaji;
+	}
+	
+	public function getLokasi()
+	{
+		$this->id_lokasi=$lokasi;
 	}
 }
 ?>
