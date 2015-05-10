@@ -87,11 +87,6 @@ class Lowongan
      */
     protected $jenis_kelamin;
 	
-    /**
-     * @Column(type="string", length=1024, nullable=true)
-     */
-    protected $posisi_terakhir;
-	
 	/**
      * @Column(type="string", length=1024, nullable=true)
      */
