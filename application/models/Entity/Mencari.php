@@ -24,5 +24,15 @@ class Mencari
      */
     protected $username;
 	
+	/**
+     * @Column(type="integer", length=3, nullable=true)
+     */
+    protected $skor;
+	
+	/**
+     * @Column(type="date", nullable=false)
+     */
+    protected $tgl_cari;
+	
 }
 ?>

@@ -9,7 +9,7 @@ class register extends CI_Controller {
 	 private $vFirst='Mira';
 	 private $vLast='Utami';
 	 private $vJK='Wanita';
-	 private $vLahir='';
+	 private $vLahir='2000/02/20';
 	 private $vAddress='';
 	 private $vPend='S1/D4';
 	 private $vPosisi='Fresh Graduate';
@@ -124,14 +124,14 @@ class register extends CI_Controller {
 		$user->setNama($this->vFirst);
 		$user->setTglJoin();
 		$user->setJenisKelamin($this->vJK);
-		//$user->setFoto("default.png");
-		//$user->setAlamat($this->vAddress);
+		$user->setFoto("default.png");
+		$user->setAlamat($this->vAddress);
 		$user->setTglLahir($this->vLahir);
 		$user->setPendTerakhir($this->vPend);
-		//$user->setPosisi($this->vPosisi);
-		//$user->setDeskripsi($this->vDesc);
-		//$user->setGaji($this->vGaji);
-		//$user->setLokasi($this->vLokasi);
+		$user->setPosisi($this->vPosisi);
+		$user->setDeskripsi($this->vDesc);
+		$user->setGaji($this->vGaji);
+		$user->setLokasi($this->vLokasi);
 		$this->em->persist($user);
 		$this->em->flush();
 		
