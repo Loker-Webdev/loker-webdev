@@ -58,6 +58,11 @@ class Perusahaan
      */
     protected $email;
 	
+	/**
+     * @Column(type="string", length=1024, nullable=true)
+     */
+    protected $logo;
+	
 	public function getUsername()
 	{
 		return $this->username;
@@ -101,6 +106,11 @@ class Perusahaan
 	public function getEmail()
 	{
 		return $this->Email;
+	}
+	
+	public function getLogo()
+	{
+		return $this->logo;
 	}
 }
 ?>
